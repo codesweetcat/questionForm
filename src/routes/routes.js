@@ -1,17 +1,12 @@
 const express = require('express');
-const controller = require('../controllers/controllers');
-const { body } = require('express-validator');
+const answerController = require('../controllers/answers.controllers');
 const router = new express.Router();
-
-router.get('/init', controller.initDatabase);
-router.get('/insertquestions', controller.insertMandSQuestionSets);
-router.get('/insertMQuestionSets', controller.insertMQuestionSets);
+const questionSetController = require("../controllers/questionSet.controller.js");
 
 
-
-router.get('/', controller.getAllQuestions);
+router.get('/', questionSetController.getAllQuestionSets);
 router.post('/postQuestion', 
-    controller.addPostAnswers    
+    answerController.addPostAnswers    
 );
 
 module.exports = router;
