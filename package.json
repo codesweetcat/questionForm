@@ -6,8 +6,10 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon index.js",
-    "test_cy": "cypress open"
-
+    "test_cy": "cypress open",
+    "lint": "eslint \"./**/*.js\" --quiet",
+    "lintFull": "eslint \"./**/*.js\"",
+    "lintFix": "eslint --fix './**/*.js'"
   },
   "keywords": [
     "nodejs",
@@ -30,5 +32,8 @@
     "nodemon": "^2.0.15",
     "promise-mysql": "^5.1.0",
     "sequelize": "^6.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0"
   }
 }

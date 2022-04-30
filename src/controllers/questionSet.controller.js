@@ -1,7 +1,5 @@
 const QuestionSets = require("../../models/QuestionSet.model")
-exports.create = (req, res) => {
-  
-};
+
 const getAllQuestionSets = (req, res) => {
     return QuestionSets.findAll().then((data) => {
         res.json({ 'question_sets': data });
