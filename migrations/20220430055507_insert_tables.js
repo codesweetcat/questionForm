@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 
- const questionSet = {
+ const questionSet1 = {
     title: 'Medical conditions',
     type: 'multipleChoiceAndSingleChoice',
     answers: JSON.stringify([
@@ -29,9 +29,7 @@ const questionSet2 = {
 };
 exports.up = function(knex) {
     return knex
-            .insert(questionSet).into('question_sets3')
-            .insert(questionSet2).into('question_sets3');
-
+            .insert([questionSet1,questionSet2]).into('question_sets3')
 };
 
 /**
