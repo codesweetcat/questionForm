@@ -16,7 +16,7 @@ const addPostAnswers = (req, res) => {
     } else {
         AnswerModel.bulkCreate(req.body.res).then( (result) => res.json(result) )
             .then(() => {
-                res.status(200).json('Subscribed successfully!')
+                res.status(200).json('Answers add successfully!')
             }).catch(error => {
                 console.log(error)
                 res.status(404).json(error)
