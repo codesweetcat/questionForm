@@ -14,10 +14,9 @@ const addPostAnswers = (req, res) => {
     if (errors.array().length > 0) {
         res.status(500).send(errors.array());
     } else {
-        AnswerModel.bulkCreate(req.body.res).then( (result) => res.json(result) )
-            .then(() => {
-                res.status(200).json('Answers add successfully!')
-            }).catch(error => {
+        AnswerModel.bulkCreate(req.body.res)
+            .then( (result) => {res.status(200).json(result) })
+            .catch(error => {
                 console.log(error)
                 res.status(404).json(error)
             })

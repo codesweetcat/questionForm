@@ -31,6 +31,12 @@ describe("renders the home page", () => {
             })  
         });
 
+        it(" none checkbox clicked", () => {
+            cy.on('window:alert', (str) => {
+                expect(str).to.equal(`Some error occured`)
+              })
+        });
+
     })
 
   
